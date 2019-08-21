@@ -1,8 +1,8 @@
-# Driver para as luzes do teclado do Notebook Avell G1513 BS MUV / A52 BS MUV
+# Driver para luzes do teclado do Notebook Avell G1513 BS MUV / A52 BS MUV
 
-O notebook Avell A52 é equipado com um teclado retroiluminido com leds RGB, contudo a Avell não fornece suporte Linux infelizmente.
+O notebook Avell A52 é equipado com um teclado retroiluminado com leds RGB, contudo a Avell não fornece suporte Linux.
 
-O chip utilizado para controlar esse recurso é ITE 8291 V0.2, o qual é listado como um dispositivo USB. Através de engenharia reversa e pesquisa em outros projetos - litados nas referências - foi possível desenvolver um Driver para a versão 0.02 do dispostivo ITE 8291.
+O chip utilizado para controlar esse recurso é ITE 8291 V0.2, o qual é listado como um dispositivo USB. Através de engenharia reversa e pesquisa em outros projetos - listados nas referências - foi possível desenvolver um driver para a versão 0.02 do dispostivo ITE 8291.
 
 Para verificar se o seu notebook utiliza este dispositivo use o comando abaixo:
 
@@ -10,7 +10,6 @@ Para verificar se o seu notebook utiliza este dispositivo use o comando abaixo:
 $lsusb
 
 Bus 001 Device 003: ID 048d:ce00 Integrated Technology Express, Inc.
-
 
 ```
 
@@ -24,7 +23,7 @@ sudo pip3 install avell_a52
 ```
 Configurar udev rules, para utilizar o driver sem necessidade de usar sudo.
 
-Criar o arquivo  **/etc/udev/rules.d/50.ite.rules** com o seguinte conteudo:
+Criar o arquivo  **/etc/udev/rules.d/50.ite.rules** com o seguinte conteúdo:
 
 ```
 
@@ -41,19 +40,18 @@ LABEL="ite8291_rules_end"
 ## Como usar?
 
 O comando para controlar os luzes do teclado é **ligthkeys**, possui vários parâmetros sendo dois principais:
+
 -c color -> Usado para colocar somente uma cor no teclado
 -e effect -> Usado para aplicar os efeitos rainbown, breathin, ...
 
 Somente pode ser utilizado um por vez -c ou -e 
-
-Além desses dois parâmetros possui os seguintes parâmetros:
 
 -b -> Controle de Brilho
 
 -d -> Direção do Efeito
 -s -> Velocidade do Efeito
 
-Tanto -d como o menos s, terão efeito quando utilizado em conjunto com o parâmetro -e
+Tanto -d como o -s, terão efeito quando utilizado em conjunto com o parâmetro -e
 
 -o -> Desligar as luzes do teclado
 -w 1 -> Utilizado para salvar um efeito, o qual será utilizado na inicialização.
@@ -110,6 +108,10 @@ $ lightkeys -e flash -s s2 -b b4 -d right2left -w 1
 
 ```
 
+##Referências
+
+[avell-unofficial-control-center](https://github.com/rodgomesc/avell-unofficial-control-center)
+[Project: STAR BEAT!](https://github.com/kirainmoe/project-starbeat)
 
 ## Termo de Isenção
 
