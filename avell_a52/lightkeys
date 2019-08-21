@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""
+Copyright (c) 2019, Petryx.
+License MIT
+Created on August 19, 2019
+@author: @petryx
+"""
+import argparse
+from avell_a52.driver.Ite8291v2 import Ite8291v2
+from avell_a52.driver.actions import Actions
+from avell_a52.driver.utils import Colors,Speed,Directions,Bright
+import os
+
+
+def parse_args(arg_input=None):
+    parser = argparse.ArgumentParser(description='Control Center Keyboard Lights Avell A52')
+    parser.add_argument('-c', help='Set color',choices=[c.name for c in Colors])
+    parser.add_argument('-e', help='Effects',choices=['rainbown','breathing','flash','mix','waving'])
+    parser.add_argument('-s', help='Set Speed of effect',default='s2',choices=[c.name for c in Speed])
+    parser.add_argument('-b', help='Adjust the Bright',default='b2',choices=[c.name for c in Bright])
+    parser.add_argument('-d', help='Direction of effect',default='left2right', choices=[c.name for c in Directions])
+    parser.add_argument('-o', help='Turnoff lights', action='store_true')
+    parser.add_argument('-w', help='Startup config',default=0,type=int,choices=[0,1])
+    args = parser.parse_args(arg_input)
+    if args.e and args.c:
+        parser.error('argument -e: not allowed with argument -c')
+
+    return parser.parse_args(arg_input)
+
+
+def main():
+
+    
+    args = parse_args()
+    dev = Ite8291v2(0x048d, 0xce00)
+    actions = Actions(dev,save=args.w)
+    function_mappings = {
+        'rainbown': actions.rainbown,
+        'breathing':actions.breathing,
+        'waving': actions.waving,
+        'flash': actions.flash,
+        'mix': actions.mix,
+    }
+    
+    if args.e:
+        ac = function_mappings[args.e]
+        ac(args.s,args.d,args.b)
+    elif args.c:
+        actions.monocolor(args.c,args.b)
+    elif args.b:
+        actions.bright(args.b)
+    
+    if args.o:
+        actions.turnOff()
+        
+
+if __name__ == "__main__":
+    main()
