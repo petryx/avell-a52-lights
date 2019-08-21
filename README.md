@@ -42,6 +42,7 @@ LABEL="ite8291_rules_end"
 O comando para controlar os luzes do teclado é **ligthkeys**, possui vários parâmetros sendo dois principais:
 
 -c color -> Usado para colocar somente uma cor no teclado
+
 -e effect -> Usado para aplicar os efeitos rainbown, breathin, ...
 
 Somente pode ser utilizado um por vez -c ou -e 
@@ -49,11 +50,13 @@ Somente pode ser utilizado um por vez -c ou -e
 -b -> Controle de Brilho
 
 -d -> Direção do Efeito
+
 -s -> Velocidade do Efeito
 
 Tanto -d como o -s, terão efeito quando utilizado em conjunto com o parâmetro -e
 
 -o -> Desligar as luzes do teclado
+
 -w 1 -> Utilizado para salvar um efeito, o qual será utilizado na inicialização.
 
 ```console
@@ -108,9 +111,10 @@ $ lightkeys -e flash -s s2 -b b4 -d right2left -w 1
 
 ```
 
-##Referências
+## Referências
 
 [avell-unofficial-control-center](https://github.com/rodgomesc/avell-unofficial-control-center)
+
 [Project: STAR BEAT!](https://github.com/kirainmoe/project-starbeat)
 
 ## Termo de Isenção
