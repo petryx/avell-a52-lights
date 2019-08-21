@@ -17,7 +17,7 @@ packages = [
 
 setup(
     name='avell_a52',
-    version='1.0.0',
+    version='1.0.1',
     description='A Project to provide a driver and interface to control keyboard rgb led of ITE 8291 V0.2 like Avell laptops',
     scripts=['avell_a52/lightkeys'],
     license='MIT',
