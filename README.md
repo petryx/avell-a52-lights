@@ -111,6 +111,7 @@ $ lightkeys -e flash -s s2 -b b4 -d right2left -w 1
 
 ```
 
+
 ## Referências
 
 [avell-unofficial-control-center](https://github.com/rodgomesc/avell-unofficial-control-center)

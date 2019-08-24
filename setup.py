@@ -17,13 +17,13 @@ packages = [
 
 setup(
     name='avell_a52',
-    version='1.0.1',
+    version='1.0.2',
     description='A Project to provide a driver and interface to control keyboard rgb led of ITE 8291 V0.2 like Avell laptops',
     scripts=['avell_a52/lightkeys'],
-    license='MIT',
+    license='MIT',https://github.com/petryx/avell-a52-ligths
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/petryx/avell-a52-ligths', 
+    url='https://github.com/petryx/avell-a52-lights', 
     author='Petryx',
     author_email='marlonpetry@gmail.com',
     packages=packages,
@@ -31,8 +31,8 @@ setup(
 	'pyusb',
 	],
     project_urls={
-        'Bug Reports': 'https://github.com/petryx/avell-a53-ligths/issues',
-        'Source': 'https://github.com/petryx/avell-a53-ligths',
+        'Bug Reports': 'https://github.com/petryx/avell-a52-lights/issues',
+        'Source': 'https://github.com/petryx/avell-a52-lights',
     },
     classifiers=[
          "Programming Language :: Python :: 3",
