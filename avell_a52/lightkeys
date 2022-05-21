@@ -8,7 +8,7 @@ Created on August 19, 2019
 import argparse
 from avell_a52.driver.Ite8291v2 import Ite8291v2
 from avell_a52.driver.actions import Actions
-from avell_a52.driver.utils import Colors,Speed,Directions,Brightness
+from avell_a52.driver.constants import Colors,Speed,Directions,Brightness
 import os
 
 

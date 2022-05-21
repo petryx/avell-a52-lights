@@ -5,7 +5,7 @@ Created on August 19, 2019
 @author: @petryx
 """
 
-from .utils import Colors, Brightness, Speed, Directions
+from .constants import Colors, Brightness, Speed, Directions
 
 
 class Actions():
