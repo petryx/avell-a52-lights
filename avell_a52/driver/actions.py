@@ -25,7 +25,7 @@ class Actions():
     def bright(self,level):
         self.dev.sendCommand(0x08, 0x02, 0x01, 0x05,Bright[level].value,0x08,0x00,self.save)
     
-    def _rainbownColors(self):
+    def _rainbowColors(self):
         self.dev.sendCommand(0x14,0x00,0x01,*Colors.red.value,0x00,self.save)
         self.dev.sendCommand(0x14,0x00,0x02,*Colors.green.value,0x00,self.save)
         self.dev.sendCommand(0x14,0x00,0x03,*Colors.blue.value,0x00,self.save)
@@ -41,8 +41,8 @@ class Actions():
         self.dev.sendCommand(0x14,0x00,0x07,*Colors.olive.value,0x00,self.save)
         
     
-    def rainbown(self,speed,directions,bright):
-        self._rainbownColors()
+    def rainbow(self,speed,directions,bright):
+        self._rainbowColors()
         self.dev.sendCommand(0x08,0x02,0x05,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value,self.save)
     
     def waving(self,speed,directions,bright):

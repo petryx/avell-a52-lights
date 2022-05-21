@@ -15,7 +15,7 @@ import os
 def parse_args(arg_input=None):
     parser = argparse.ArgumentParser(description='Control Center Keyboard Lights Avell A52')
     parser.add_argument('-c', help='Set color',choices=[c.name for c in Colors])
-    parser.add_argument('-e', help='Effects',choices=['rainbown','breathing','flash','mix','waving'])
+    parser.add_argument('-e', help='Effects',choices=['rainbow','breathing','flash','mix','waving'])
     parser.add_argument('-s', help='Set Speed of effect',default='s2',choices=[c.name for c in Speed])
     parser.add_argument('-b', help='Adjust the Bright',default='b2',choices=[c.name for c in Bright])
     parser.add_argument('-d', help='Direction of effect',default='left2right', choices=[c.name for c in Directions])
@@ -35,7 +35,7 @@ def main():
     dev = Ite8291v2(0x048d, 0xce00)
     actions = Actions(dev,save=args.w)
     function_mappings = {
-        'rainbown': actions.rainbown,
+        'rainbow': actions.rainbow,
         'breathing':actions.breathing,
         'waving': actions.waving,
         'flash': actions.flash,
