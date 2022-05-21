@@ -77,7 +77,7 @@ optional arguments:
   -e {rainbow,breathing,flash,mix,waving}
                         Effects
   -s {s1,s2,s3,s4}      Set Speed of effect
-  -b {b0,b1,b2,b3,b4}   Adjust the Bright
+  -b {b0,b1,b2,b3,b4}   Adjust the Brightness
   -d {left2right,right2left,sync}
                         Direction of effect
   -o                    Turnoff lights

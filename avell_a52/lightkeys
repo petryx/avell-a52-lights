@@ -8,7 +8,7 @@ Created on August 19, 2019
 import argparse
 from avell_a52.driver.Ite8291v2 import Ite8291v2
 from avell_a52.driver.actions import Actions
-from avell_a52.driver.utils import Colors,Speed,Directions,Bright
+from avell_a52.driver.utils import Colors,Speed,Directions,Brightness
 import os
 
 
@@ -17,7 +17,7 @@ def parse_args(arg_input=None):
     parser.add_argument('-c', help='Set color',choices=[c.name for c in Colors])
     parser.add_argument('-e', help='Effects',choices=['rainbow','breathing','flash','mix','waving'])
     parser.add_argument('-s', help='Set Speed of effect',default='s2',choices=[c.name for c in Speed])
-    parser.add_argument('-b', help='Adjust the Bright',default='b2',choices=[c.name for c in Bright])
+    parser.add_argument('-b', help='Adjust the Brightness',default='b2',choices=[c.name for c in Brightness])
     parser.add_argument('-d', help='Direction of effect',default='left2right', choices=[c.name for c in Directions])
     parser.add_argument('-o', help='Turnoff lights', action='store_true')
     parser.add_argument('-w', help='Startup config',default=0,type=int,choices=[0,1])
@@ -48,7 +48,7 @@ def main():
     elif args.c:
         actions.monocolor(args.c,args.b)
     elif args.b:
-        actions.bright(args.b)
+        actions.brightness(args.b)
     
     if args.o:
         actions.turnOff()

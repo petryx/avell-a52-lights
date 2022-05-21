@@ -24,7 +24,7 @@ class Colors(Enum):
     yellow = [0xff,0xff,0x00]
     orange = [0xff,0x80,0x00]
  
-class Bright(Enum):
+class Brightness(Enum):
     b0 = 0x00
     b1 = 0x08
     b2 = 0x16

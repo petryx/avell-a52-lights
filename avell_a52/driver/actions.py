@@ -5,7 +5,7 @@ Created on August 19, 2019
 @author: @petryx
 """
 
-from .utils import Colors,Bright,Speed,Directions
+from .utils import Colors,Brightness,Speed,Directions
 
 
 class Actions():
@@ -17,13 +17,13 @@ class Actions():
     def turnOff(self):
         self.dev.sendCommand(0x08,0x01,0x0,0x0,0x0,0x0,0x0,self.save)
     
-    def monocolor(self,color,bright):
+    def monocolor(self,color,brightness):
         for i in range(1,self.dev.n_cols+1):
             self.dev.sendCommand(0x14,0x00,i,*Colors[color].value,0x00,self.save)
-        self.bright(bright)
+        self.brightness(brightness)
 
-    def bright(self,level):
-        self.dev.sendCommand(0x08, 0x02, 0x01, 0x05,Bright[level].value,0x08,0x00,self.save)
+    def brightness(self,level):
+        self.dev.sendCommand(0x08, 0x02, 0x01, 0x05,Brightness[level].value,0x08,0x00,self.save)
     
     def _rainbowColors(self):
         self.dev.sendCommand(0x14,0x00,0x01,*Colors.red.value,0x00,self.save)
@@ -41,26 +41,26 @@ class Actions():
         self.dev.sendCommand(0x14,0x00,0x07,*Colors.olive.value,0x00,self.save)
         
     
-    def rainbow(self,speed,directions,bright):
+    def rainbow(self,speed,directions,brightness):
         self._rainbowColors()
-        self.dev.sendCommand(0x08,0x02,0x05,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value,self.save)
+        self.dev.sendCommand(0x08,0x02,0x05,Speed[speed].value,Brightness[brightness].value,0x08,Directions[directions].value,self.save)
     
-    def waving(self,speed,directions,bright):
+    def waving(self,speed,directions,brightness):
         self._defaultColors()
-        self.dev.sendCommand(0x08,0x02,0x03,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value, self.save)
+        self.dev.sendCommand(0x08,0x02,0x03,Speed[speed].value,Brightness[brightness].value,0x08,Directions[directions].value, self.save)
 
-    def breathing(self,speed,directions,bright):
+    def breathing(self,speed,directions,brightness):
         self._defaultColors()
-        self.dev.sendCommand(0x08,0x02,0x02,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value, self.save)
+        self.dev.sendCommand(0x08,0x02,0x02,Speed[speed].value,Brightness[brightness].value,0x08,Directions[directions].value, self.save)
 
 
-    def flash(self,speed,directions,bright):
+    def flash(self,speed,directions,brightness):
         self._defaultColors()
-        self.dev.sendCommand(0x08,0x02,0x12,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value, self.save)
+        self.dev.sendCommand(0x08,0x02,0x12,Speed[speed].value,Brightness[brightness].value,0x08,Directions[directions].value, self.save)
 
-    def mix(self,speed,directions,bright):
+    def mix(self,speed,directions,brightness):
         self._defaultColors()
-        self.dev.sendCommand(0x08,0x02,0x13,Speed[speed].value,Bright[bright].value,0x08,Directions[directions].value, self.save)
+        self.dev.sendCommand(0x08,0x02,0x13,Speed[speed].value,Brightness[brightness].value,0x08,Directions[directions].value, self.save)
 
 
     
