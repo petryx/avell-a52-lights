@@ -43,7 +43,7 @@ O comando para controlar os luzes do teclado é **ligthkeys**, possui vários pa
 
 -c color -> Usado para colocar somente uma cor no teclado
 
--e effect -> Usado para aplicar os efeitos rainbown, breathin, ...
+-e effect -> Usado para aplicar os efeitos rainbow, breathin, ...
 
 Somente pode ser utilizado um por vez -c ou -e 
 
@@ -64,7 +64,7 @@ $ lightkeys --help
 
 usage: lightkeys [-h]
                  [-c {aqua,blue,fuchsia,green,gray,lime,maroon,navy,olive,purple,red,silver,teal,white,yellow,orange}]
-                 [-e {rainbown,breathing,flash,mix,waving}] [-s {s1,s2,s3,s4}]
+                 [-e {rainbow,breathing,flash,mix,waving}] [-s {s1,s2,s3,s4}]
                  [-b {b0,b1,b2,b3,b4}] [-d {left2right,right2left,sync}] [-o]
                  [-w {0,1}]
 
@@ -74,10 +74,10 @@ optional arguments:
   -h, --help            show this help message and exit
   -c {aqua,blue,fuchsia,green,gray,lime,maroon,navy,olive,purple,red,silver,teal,white,yellow,orange}
                         Set color
-  -e {rainbown,breathing,flash,mix,waving}
+  -e {rainbow,breathing,flash,mix,waving}
                         Effects
   -s {s1,s2,s3,s4}      Set Speed of effect
-  -b {b0,b1,b2,b3,b4}   Adjust the Bright
+  -b {b0,b1,b2,b3,b4}   Adjust the Brightness
   -d {left2right,right2left,sync}
                         Direction of effect
   -o                    Turnoff lights
